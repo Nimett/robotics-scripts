@@ -1,0 +1,23 @@
+{
+    "name": "ros2-nvidia-docker",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--net=host",
+        "-e", "DISPLAY=${env:DISPLAY}"
+    ],
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
+}
